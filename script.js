@@ -157,7 +157,7 @@ form?.addEventListener("submit", (e) => {
   cart = [];
   form.reset();
   renderCart();
-  fireConfetti();
+  //fireConfetti();
 });
 
 function showToast(msg) {
@@ -168,17 +168,7 @@ function showToast(msg) {
   setTimeout(() => toast.remove(), 2000);
 }
 
-function fireConfetti() {
-  for (let i = 0; i < 80; i++) {
-    const dot = document.createElement("div");
-    dot.className = "confetti";
-    dot.style.left = Math.random() * 100 + "%";
-    dot.style.backgroundColor = `hsl(${Math.random() * 360}, 80%, 70%)`;
-    dot.style.animationDuration = 2 + Math.random() * 2 + "s";
-    document.body.appendChild(dot);
-    setTimeout(() => dot.remove(), 4000);
-  }
-}
+
 
 function saveCart() {
   localStorage.setItem("sweetScoopsCart", JSON.stringify(cart));
@@ -241,6 +231,3 @@ document.querySelectorAll('nav ul li a').forEach(link => {
     menu.classList.remove('show');
   });
 });
-
-
-
